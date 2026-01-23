@@ -83,9 +83,9 @@ const FloatingContact: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-[999]">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[999]">
       {open && (
-        <div className="mb-4 w-[320px] rounded-2xl shadow-2xl border border-white/20 overflow-hidden contact-pop">
+        <div className="mb-3 sm:mb-4 w-[280px] sm:w-[320px] rounded-2xl shadow-2xl border border-white/20 overflow-hidden contact-pop">
           <div className="bg-greenBg px-4 py-3 flex items-center justify-between">
             <p className="text-white font-outfit font-semibold">Contact Us</p>
             <button
@@ -151,7 +151,7 @@ const FloatingContact: React.FC = () => {
 
       <button
         onClick={() => setOpen((v) => !v)}
-        className="rounded-full bg-greenBg text-white shadow-xl px-5 py-3 font-outfit font-semibold hover:opacity-95 active:opacity-90 transition contact-fab"
+        className="rounded-full bg-greenBg text-white shadow-xl px-4 py-3 sm:px-5 font-outfit font-semibold hover:opacity-95 active:opacity-90 transition contact-fab"
         type="button"
         aria-label="Open contact form"
       >
@@ -169,17 +169,17 @@ const MainPage: React.FC = () => {
         {/* Main Banner section */}
         <section className="relative w-full">
           {/* Green Line */}
-          <div className="flex bg-greenPrimay h-44 z-10" />
+          <div className="flex bg-greenPrimay h-32 sm:h-44 z-10" />
 
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-greenPrimay rounded-full z-10 p-10">
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-greenPrimay rounded-full z-10 p-6 sm:p-10">
             <img
               src="/assets/logo/logo.png"
               alt="logo"
-              className="w-auto h-40 z-10 hover:scale-[1.02] transition-transform duration-500"
+              className="w-auto h-28 sm:h-40 z-10 hover:scale-[1.02] transition-transform duration-500"
             />
           </div>
 
-          <div className="relative z-0 flex justify-center w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
+          <div className="relative z-0 flex justify-center w-full h-[260px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
             <img
               src="/assets/img/Banner3.png"
               alt="banner"
@@ -191,10 +191,10 @@ const MainPage: React.FC = () => {
 
       <main style={{ backgroundImage: "url(/assets/img/bg-red.png)" }}>
         {/* About Oleaura */}
-        <section className="px-8 sm:px-16 lg:px-24 py-8 sm:py-16 lg:py-24 no-repeat center cover">
-          <div className="flex max-w-7xl pt-10 mx-auto justify-between">
+        <section className="px-6 sm:px-16 lg:px-24 py-8 sm:py-16 lg:py-24 no-repeat center cover">
+          <div className="flex max-w-7xl pt-10 mx-auto justify-between flex-col lg:flex-row gap-10 lg:gap-0">
             <div className="w-full">
-              <h2 className="font-funkyFont text-[#0c2000] text-4xl">
+              <h2 className="font-funkyFont text-[#0c2000] text-3xl sm:text-4xl">
                 Welcom to the true taste <br /> of the Mediterranean
               </h2>
 
@@ -215,15 +215,15 @@ const MainPage: React.FC = () => {
               <img
                 src="/assets/logo/logo.png"
                 alt="Oleaura Logo"
-                className="w-[60%] hover:scale-[1.02] transition-transform duration-500"
+                className="w-[65%] sm:w-[50%] lg:w-[60%] hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
           </div>
         </section>
 
         {/* green box with image */}
-        <section className="flex justify-end">
-          <div className="justify-end flex ml-8 w-[25%]">
+        <section className="flex justify-end flex-col lg:flex-row">
+          <div className="justify-end flex ml-0 lg:ml-8 w-full lg:w-[25%] px-6 sm:px-16 lg:px-0">
             <img
               src="/assets/img/olive.png"
               alt="olive image"
@@ -231,14 +231,14 @@ const MainPage: React.FC = () => {
             />
           </div>
 
-          <div className="w-[80%] py-8 sm:py-16 lg:py-24 bg-greenBg my-8 flex flex-row items-start justify-center flex-col">
-            <h2 className="font-funkyFont px-8 sm:px-16 lg:px-24 pb-4 text-white text-4xl">
+          <div className="w-full lg:w-[80%] py-8 sm:py-16 lg:py-24 bg-greenBg my-8 flex flex-col items-start justify-center">
+            <h2 className="font-funkyFont px-6 sm:px-16 lg:px-24 pb-4 text-white text-3xl sm:text-4xl">
               Freshness
             </h2>
-            <p className="text-white px-8 text-base font-outfit sm:px-16 lg:px-24">
+            <p className="text-white px-6 sm:px-16 lg:px-24 text-base font-outfit">
               {pageTextContent[0].content}
             </p>
-            <p className="text-white px-8 text-base font-outfit sm:px-16 lg:px-24 mt-4">
+            <p className="text-white px-6 sm:px-16 lg:px-24 text-base font-outfit mt-4">
               {pageTextContent[0].content}
             </p>
           </div>
@@ -246,48 +246,48 @@ const MainPage: React.FC = () => {
 
         {/* Extra special */}
         <section className="relative w-full flex flex-col items-center justify-center py-8 sm:py-16 lg:py-24 overflow-hidden">
-          <h1 className="text-[180px] font-light text-greenTextDark font-serif uppercase tracking-tight fade-in">
+          <h1 className="font-light text-greenTextDark font-serif uppercase tracking-tight fade-in text-[56px] sm:text-[90px] md:text-[120px] lg:text-[180px] leading-none">
             Extra Special
           </h1>
 
           <img
             src="/assets/img/abs-1.png"
             alt="abstract"
-            className="absolute left-0 w-[50%] z-0 opacity-90"
+            className="absolute left-0 w-[60%] sm:w-[50%] z-0 opacity-90"
           />
           <img
             src="/assets/img/abs-2.png"
             alt="abstract"
-            className="absolute -right-16 -bottom-36 w-[40%] z-0 opacity-90"
+            className="absolute -right-16 -bottom-36 w-[55%] sm:w-[45%] lg:w-[40%] z-0 opacity-90"
           />
 
           <img
             src="/assets/img/two-bottle.png"
             alt="olive-bottles"
-            className="w-[60%] z-10 hover:scale-[1.01] transition-transform duration-700 ease-out"
+            className="w-[90%] sm:w-[70%] lg:w-[60%] z-10 hover:scale-[1.01] transition-transform duration-700 ease-out"
           />
 
-          <div className="max-w-7xl py-10 z-10">
-            <p className="w-[70%] font-outfit">{pageTextContent[1].content}</p>
+          <div className="max-w-7xl py-10 z-10 px-6 sm:px-16 lg:px-24">
+            <p className="w-full lg:w-[70%] font-outfit">{pageTextContent[1].content}</p>
           </div>
         </section>
 
         {/* The Range */}
         <section className="relative w-full">
-          <h1 className="font-funkyFont text-9xl bg-greenBg flex justify-end py-10 px-8 text-white z-20">
+          <h1 className="font-funkyFont bg-greenBg flex justify-end py-10 px-6 sm:px-16 text-white z-20 text-5xl sm:text-7xl lg:text-9xl">
             The Range
           </h1>
 
           <div className="flex flex-col items-center">
-            <div className="pt-10">
+            <div className="pt-10 px-6 sm:px-0">
               <img
                 src="/assets/img/all-bottle.png"
                 alt="all-bottles"
-                className="hover:scale-[1.01] transition-transform duration-700"
+                className="hover:scale-[1.01] transition-transform duration-700 max-w-full"
               />
             </div>
 
-            <p className="py-8 sm:py-16 w-1/2 mx-auto">
+            <p className="py-8 sm:py-16 w-[92%] sm:w-[70%] lg:w-1/2 mx-auto">
               {pageTextContent[0].highlight && (
                 <span className="font-semibold text-blue-800">
                   {pageTextContent[0].highlight}
@@ -303,46 +303,48 @@ const MainPage: React.FC = () => {
 
         {/* Boxes */}
         <section className="w-full py-16">
-          <div className="flex flex-1 justify-between gap-3 px-8 sm:px-16 lg:px-24">
-            {contentInBox.map((box, i) => (
-              <div
-                key={i}
-                className="group flex flex-col items-center justify-center py-12 px-8 text-center w-full bg-white/80 rounded-sm shadow-lg border-1 border-white
-                           hover:-translate-y-1 hover:shadow-xl transition-all duration-500"
-              >
-                <img
-                  src={box.imgSrc}
-                  alt="icon"
-                  className="h-12 group-hover:scale-[1.04] transition-transform duration-500"
-                />
-                <h2 className="uppercase font-outfit font-semibold py-8 pb-5">
-                  {box.headTxt}
-                </h2>
-                <p className="font-outfit">{box.bodyTxt}</p>
-              </div>
-            ))}
+          <div className="px-6 sm:px-16 lg:px-24">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {contentInBox.map((box, i) => (
+                <div
+                  key={i}
+                  className="group flex flex-col items-center justify-center py-12 px-8 text-center w-full bg-white/80 rounded-sm shadow-lg border-1 border-white
+                             hover:-translate-y-1 hover:shadow-xl transition-all duration-500"
+                >
+                  <img
+                    src={box.imgSrc}
+                    alt="icon"
+                    className="h-12 group-hover:scale-[1.04] transition-transform duration-500"
+                  />
+                  <h2 className="uppercase font-outfit font-semibold py-8 pb-5">
+                    {box.headTxt}
+                  </h2>
+                  <p className="font-outfit">{box.bodyTxt}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Bottle page */}
-        <section className="relative mx-auto py-20">
-          <div className="relative flex px-10 z-20 max-w-7xl flex-col items-center gap-44 justify-center">
+        <section className="relative mx-auto py-20 overflow-hidden">
+          <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center justify-center px-6 sm:px-10 gap-20 sm:gap-28 lg:gap-44">
             {bottleContent.map((bot, i) => (
               <div
                 key={i}
-                className={`flex items-center gap-44 justify-center ${
-                  i % 2 !== 0 ? "flex-row-reverse" : ""
+                className={`flex items-center justify-center w-full gap-8 sm:gap-14 lg:gap-44 flex-col lg:flex-row ${
+                  i % 2 !== 0 ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 <img
                   src={bot.imgSrc}
                   alt="single-bottle"
-                  className={`w-[20%] drop-shadow-xl transition-transform duration-700 ease-out hover:scale-[1.03] hover:-rotate-1 ${
+                  className={`w-[55%] sm:w-[35%] lg:w-[20%] drop-shadow-xl transition-transform duration-700 ease-out hover:scale-[1.03] hover:-rotate-1 ${
                     i % 2 === 0 ? "float-slow" : "float-fast"
                   }`}
                 />
 
-                <p className="text-center text-base w-[40%]">
+                <p className="text-center text-base w-full sm:w-[70%] lg:w-[40%]">
                   {bot.highlighted && (
                     <span className="font-semibold text-blue-800">
                       {bot.highlighted}
@@ -358,10 +360,10 @@ const MainPage: React.FC = () => {
         </section>
 
         {/* Last section */}
-        <section className="py-20 px-10 w-full overflow-hidden">
-          <div className="flex">
-            <div className="w-[60%]">
-              <p className="text-center text-base px-8">
+        <section className="py-20 px-6 sm:px-10 w-full overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start">
+            <div className="w-full lg:w-[60%]">
+              <p className="text-center text-base px-0 sm:px-8">
                 {pageTextContent[0].highlight && (
                   <span className="font-semibold text-blue-800">
                     {pageTextContent[0].highlight}
@@ -374,11 +376,11 @@ const MainPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex justify-end">
+            <div className="w-full lg:w-[40%] flex justify-center lg:justify-end mt-10 lg:mt-0">
               <img
                 src="/assets/img/oil.png"
                 alt="oil-bottle"
-                className="w-[80%] -rotate-[20deg] translate-x-10 drop-shadow-2xl float-slow hover:scale-[1.02] transition-transform duration-700"
+                className="w-[60%] sm:w-[45%] lg:w-[60%] -rotate-[20deg]  drop-shadow-2xl  hover:scale-[1.02] transition-transform duration-700"
               />
             </div>
           </div>
@@ -387,11 +389,11 @@ const MainPage: React.FC = () => {
 
       {/* Footer */}
       <footer className="w-full bg-greenBg py-10">
-        <div className="max-w-7xl mx-auto px-8 sm:px-16 lg:px-24 flex justify-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 flex justify-center">
           <img
             src="/assets/logo/logo.png"
             alt="Oleaura Logo"
-            className="h-16 w-auto hover:scale-[1.02] transition-transform duration-500"
+            className="h-14 sm:h-16 w-auto hover:scale-[1.02] transition-transform duration-500"
           />
         </div>
       </footer>
