@@ -289,7 +289,7 @@ const MainPage: React.FC = () => {
 
             <p className="py-8 sm:py-16 w-[92%] sm:w-[70%] lg:w-1/2 mx-auto">
               {pageTextContent[0].highlight && (
-                <span className="font-semibold text-blue-800">
+                <span className="font-semibold font-outfit text-blue-800">
                   {pageTextContent[0].highlight}
                 </span>
               )}{" "}
@@ -346,7 +346,7 @@ const MainPage: React.FC = () => {
 
                 <p className="text-center text-base w-full sm:w-[70%] lg:w-[40%]">
                   {bot.highlighted && (
-                    <span className="font-semibold text-blue-800">
+                    <span className="font-semibold font-outfit text-blue-800">
                       {bot.highlighted}
                     </span>
                   )}{" "}
@@ -363,9 +363,9 @@ const MainPage: React.FC = () => {
         <section className="py-20 px-6 sm:px-10 w-full overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center lg:items-start">
             <div className="w-full lg:w-[60%]">
-              <p className="text-center text-base px-0 sm:px-8">
+              <p className="text-center font-outfit text-base px-0 sm:px-8">
                 {pageTextContent[0].highlight && (
-                  <span className="font-semibold text-blue-800">
+                  <span className="font-semibold font-outfit text-blue-800">
                     {pageTextContent[0].highlight}
                   </span>
                 )}{" "}
@@ -380,7 +380,7 @@ const MainPage: React.FC = () => {
               <img
                 src="/assets/img/oil.png"
                 alt="oil-bottle"
-                className="w-[60%] sm:w-[45%] lg:w-[60%] -rotate-[20deg]  drop-shadow-2xl  hover:scale-[1.02] transition-transform duration-700"
+                className="w-[60%] sm:w-[45%] lg:w-[60%] -rotate-[20deg] drop-shadow-2xl hover:scale-[1.02] transition-transform duration-700"
               />
             </div>
           </div>
@@ -388,13 +388,128 @@ const MainPage: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="w-full bg-greenBg py-10">
-        <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 flex justify-center">
-          <img
-            src="/assets/logo/logo.png"
-            alt="Oleaura Logo"
-            className="h-14 sm:h-16 w-auto hover:scale-[1.02] transition-transform duration-500"
-          />
+      <footer className="relative w-full bg-greenBg pt-12 pb-8">
+        {/* lifted logo */}
+        <div className="absolute -top-6 left-6 sm:left-16 lg:left-24">
+          <div className="bg-greenBg rounded-full p-3 shadow-xl">
+            <img
+              src="/assets/logo/logo.png"
+              alt="Oleaura Logo"
+              className="h-12 sm:h-14 w-auto hover:scale-[1.02] transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 pt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-white font-outfit">
+            {/* Company */}
+            <div>
+              <h3 className="font-semibold uppercase tracking-wide mb-3">Company</h3>
+              <p className="text-white/80 text-sm leading-relaxed font-outfit">
+                Oleaura brings the true taste of the Mediterranean with premium Greek olive oil,
+                sourced from carefully selected farms and crafted for everyday excellence.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-semibold uppercase tracking-wide mb-3">Quick Links</h3>
+              <ul className="space-y-2 text-sm text-white/85">
+                <li>
+                  <a className="hover:text-white transition" href="#about">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:text-white transition" href="#range">
+                    The Range
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:text-white transition" href="#quality">
+                    Quality
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:text-white transition" href="#contact">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Support */}
+            <div>
+              <h3 className="font-semibold uppercase tracking-wide mb-3">Support</h3>
+              <ul className="space-y-2 text-sm text-white/85">
+                <li>
+                  <a className="hover:text-white transition" href="#faq">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:text-white transition" href="#shipping">
+                    Shipping & Returns
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:text-white transition" href="#privacy">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:text-white transition" href="#terms">
+                    Terms & Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h3 className="font-semibold uppercase tracking-wide mb-3">Get in touch</h3>
+              <ul className="space-y-2 text-sm text-white/85">
+                <li>
+                  <span className="text-white/70">Email:</span> hello@oleaura.com
+                </li>
+                <li>
+                  <span className="text-white/70">Phone:</span> +94 77 123 4567
+                </li>
+                <li>
+                  <span className="text-white/70">Location:</span> Colombo, Sri Lanka
+                </li>
+              </ul>
+
+              <div className="mt-4 flex gap-3">
+                <a
+                  href="#"
+                  className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition flex items-center justify-center"
+                  aria-label="Instagram"
+                >
+                  <span className="text-sm">IG</span>
+                </a>
+                <a
+                  href="#"
+                  className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition flex items-center justify-center"
+                  aria-label="Facebook"
+                >
+                  <span className="text-sm">FB</span>
+                </a>
+                <a
+                  href="#"
+                  className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition flex items-center justify-center"
+                  aria-label="TikTok"
+                >
+                  <span className="text-sm">TT</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/75 text-sm">
+            <p>© {new Date().getFullYear()} Oleaura. All rights reserved.</p>
+            <p className="text-white/60">Crafted with care • Mediterranean quality</p>
+          </div>
         </div>
       </footer>
 
