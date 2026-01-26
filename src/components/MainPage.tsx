@@ -21,12 +21,16 @@ type BottleContentItem = {
 const pageTextContent: ContentText[] = [
   {
     content:
-      " is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece, it reflects the country’s djjjjjjjijjjjjjjjjverse olive-growing regions while maintaining a and dependable character. The flavour profile is clean and well-balanced, with gentle fruitiness, subtle herbaceous notes,jjjjj and a smooth, controlled peppery finish. Its versatility ake cooking and finishing, enhancing dishes without ove",
-    highlight: "Premium Greek Olive oil Oleaura",
+      " crafted for consistency, balance, and everyday culinary excellence at a professional standard. Sourced exclusively from carefully selected farms across Greece, it reflects the country’s diverse olive-growing regions while maintaining a unified and dependable character.",
+    highlight: "Oleaura is a premium olive oil",
   },
   {
     content:
-      "Premium Greek Olive oil Oleaura is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece, it reflects the country’s djjjjjjjijjjjjjjjjverse olive-growing regions while maintaining a and dependable character.",
+      "The flavour profile is clean and well-balanced, with gentle fruitiness, subtle herbaceous notes, and a smooth, controlled peppery finish. Its versatility makes it ideal for both cooking and finishing, enhancing dishes without overpowering them.",
+  },
+  {
+    content:
+      "By combining generations of Greek olive-growing tradition with modern production techniques, Oleaura delivers an olive oil defined by purity, reliability, and performance. Whether in a professional kitchen or a refined home, it serves as a trusted foundation consistent in quality, expressive in taste, and unmistakably premium",
   },
 ];
 
@@ -35,43 +39,43 @@ const contentInBox: BoxContent[] = [
     imgSrc: "/assets/img/icon-1.png",
     headTxt: "Strict Selection",
     bodyTxt:
-      "Premium Greek Olive oil Oleaura is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece",
+      "At Oleaura, we carefully select olives from the finest Mediterranean groves, preserving their terroir and natural character. Every harvest follows traditional practices and sustainable cultivation, ensuring the foundation of exceptional olive oil.",
   },
   {
     imgSrc: "/assets/img/icon-2.png",
-    headTxt: "Strict Selection",
+    headTxt: "TRACEABILITY",
     bodyTxt:
-      "Premium Greek Olive oil Oleaura is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece",
+      "From orchard to bottle, we maintain full traceability. We know our growers, the unique qualities of their land, and handpick each olive to guarantee purity, consistency, and integrity in every drop.",
   },
   {
     imgSrc: "/assets/img/icon-3.png",
-    headTxt: "Strict Selection",
+    headTxt: "FRESHNESS & QUALITY",
     bodyTxt:
-      "Premium Greek Olive oil Oleaura is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece",
-  },
-  {
-    imgSrc: "/assets/img/icon-4.png",
-    headTxt: "Strict Selection",
-    bodyTxt:
-      "Premium Greek Olive oil Oleaura is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece",
+      "Oleaura is committed to excellence. Our producers uphold diverse olive varieties, safeguard their natural freshness, and maintain rigorous standards—delivering oil that is both vibrant and refined.",
   },
 ];
 
 const bottleContent: BottleContentItem[] = [
   {
-    imgSrc: "/assets/img/oil.png",
+    imgSrc: "/assets/img/1.png",
     bottleBody:
       " is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece, it reflects the country’s djjjjjjjijjjjjjjjjverse olive-growing regions while maintaining a and dependable character. The flavour profile is clean and well-balanced, with gentle fruitiness, subtle herbaceous notes,jjjjj and a smooth, controlled peppery finish. Its versatility ake cooking and finishing, enhancing dishes without ove",
     highlighted: "Premium Greek Olive oil Oleaura",
   },
   {
-    imgSrc: "/assets/img/oil.png",
+    imgSrc: "/assets/img/2.png",
     bottleBody:
       " is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece, it reflects the country’s djjjjjjjijjjjjjjjjverse olive-growing regions while maintaining a and dependable character. The flavour profile is clean and well-balanced, with gentle fruitiness, subtle herbaceous notes,jjjjj and a smooth, controlled peppery finish. Its versatility ake cooking and finishing, enhancing dishes without ove",
     highlighted: "Premium Greek Olive oil Oleaura",
   },
   {
-    imgSrc: "/assets/img/oil.png",
+    imgSrc: "/assets/img/3.png",
+    bottleBody:
+      " is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece, it reflects the country’s djjjjjjjijjjjjjjjjverse olive-growing regions while maintaining a and dependable character. The flavour profile is clean and well-balanced, with gentle fruitiness, subtle herbaceous notes,jjjjj and a smooth, controlled peppery finish. Its versatility ake cooking and finishing, enhancing dishes without ove",
+    highlighted: "Premium Greek Olive oil Oleaura",
+  },
+  {
+    imgSrc: "/assets/img/4.png",
     bottleBody:
       " is a premium excellence at a professional stangggdard. jjSourced exclusively from carefully selecjjjjjted farms across Greece, it reflects the country’s djjjjjjjijjjjjjjjjverse olive-growing regions while maintaining a and dependable character. The flavour profile is clean and well-balanced, with gentle fruitiness, subtle herbaceous notes,jjjjj and a smooth, controlled peppery finish. Its versatility ake cooking and finishing, enhancing dishes without ove",
     highlighted: "Premium Greek Olive oil Oleaura",
@@ -208,6 +212,9 @@ const MainPage: React.FC = () => {
                 <br />
                 <br />
                 {pageTextContent[1].content}
+                <br />
+                <br />
+                {pageTextContent[2].content}
               </p>
             </div>
 
@@ -225,7 +232,7 @@ const MainPage: React.FC = () => {
         <section className="flex justify-end flex-col lg:flex-row">
           <div className="justify-end flex ml-0 lg:ml-8 w-full lg:w-[25%] px-6 sm:px-16 lg:px-0">
             <img
-              src="/assets/img/olive.png"
+              src="/assets/img/olive-about.jpeg"
               alt="olive image"
               className="w-full hover:rotate-[-1deg] hover:scale-[1.01] transition-transform duration-500"
             />
@@ -236,20 +243,23 @@ const MainPage: React.FC = () => {
               Freshness
             </h2>
             <p className="text-white px-6 sm:px-16 lg:px-24 text-base font-outfit">
-              {pageTextContent[0].content}
+              Oleaura is more than olive oil it’s a taste experience. Crafted for daily use, it brings the freshness and vitality of the Mediterranean and the authentic taste of Greece to your kitchen, inspiring meals that are cooked, shared, and savored every day.
             </p>
-            <p className="text-white px-6 sm:px-16 lg:px-24 text-base font-outfit mt-4">
+            {/* <p className="text-white px-6 sm:px-16 lg:px-24 text-base font-outfit mt-4">
               {pageTextContent[0].content}
-            </p>
+            </p> */}
           </div>
         </section>
 
         {/* Extra special */}
         <section className="relative w-full flex flex-col items-center justify-center py-8 sm:py-16 lg:py-24 overflow-hidden">
-          <h1 className="font-light text-greenTextDark font-serif uppercase tracking-tight fade-in text-[56px] sm:text-[90px] md:text-[120px] lg:text-[180px] leading-none">
-            Extra Special
-          </h1>
+          <div className="relative flex flex-col items-center justify-center">
+            <h1 className="font-light text-greenTextDark font-serif uppercase tracking-tight fade-in text-[56px] sm:text-[90px] md:text-[120px] lg:text-[180px] leading-none">
+              Extra Special
+            </h1>
+            <p className="font-newCursive text-[#dcc07c] opacity-70  text-[15rem] absolute">premium</p>
 
+          </div>
           <img
             src="/assets/img/abs-1.png"
             alt="abstract"
@@ -268,14 +278,21 @@ const MainPage: React.FC = () => {
           />
 
           <div className="max-w-7xl py-10 z-10 px-6 sm:px-16 lg:px-24">
-            <p className="w-full lg:w-[70%] font-outfit">{pageTextContent[1].content}</p>
+            <p className="w-full lg:w-[70%] font-outfit"><span className="font-bold text-blue-900">Extra Virgin Olive Oil </span>
+              Oleaura Premium Extra Special Extra Virgin Olive Oil is cold-extracted from carefully selected olives to deliver a clean, balanced profile with gentle fruitiness and a refined peppery finish. Creatively designed and specially packed, each bottle is crafted to protect freshness and elevate the oil’s unique character.
+
+
+              <br /><br />
+              <span className="font-bold text-blue-900">Virgin Olive Oil</span>
+              Oleaura Premium Extra Special Virgin Olive Oil offers a softer, rounded flavour suited for everyday cooking, with dependable quality and smooth performance. Thoughtfully designed packaging complements its subtle taste, ensuring both freshness and a refined presentation.
+            </p>
           </div>
         </section>
 
         {/* The Range */}
         <section className="relative w-full">
           <h1 className="font-funkyFont bg-greenBg flex justify-end py-10 px-6 sm:px-16 text-white z-20 text-5xl sm:text-7xl lg:text-9xl">
-            The Range
+            Available Formats
           </h1>
 
           <div className="flex flex-col items-center">
@@ -298,27 +315,40 @@ const MainPage: React.FC = () => {
               <br />
               {pageTextContent[1].content}
             </p>
+            <img src="/assets/logo/trans-logo.png" alt="Logo" className="absolute h-[50%] right-0 bottom-0" />
           </div>
+
+
         </section>
 
         {/* Boxes */}
-        <section className="w-full py-16">
-          <div className="px-6 sm:px-16 lg:px-24">
+        <section className="w-full min-h-screen flex items-center py-16">
+          <div className="w-full px-6 sm:px-16 lg:px-24">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {contentInBox.map((box, i) => (
                 <div
                   key={i}
-                  className="group flex flex-col items-center justify-center py-12 px-8 text-center w-full bg-white/80 rounded-sm shadow-lg border-1 border-white
-                             hover:-translate-y-1 hover:shadow-xl transition-all duration-500"
+                  className="
+            group flex flex-col items-center justify-center
+            py-12 px-8 text-center w-full
+            bg-white/80
+            rounded-sm
+            shadow-lg
+            border border-white/40
+            hover:-translate-y-1 hover:shadow-xl
+            transition-all duration-500
+          "
                 >
                   <img
                     src={box.imgSrc}
                     alt="icon"
-                    className="h-12 group-hover:scale-[1.04] transition-transform duration-500"
+                    className="h-20 group-hover:scale-[1.04] transition-transform duration-500"
                   />
+
                   <h2 className="uppercase font-outfit font-semibold py-8 pb-5">
                     {box.headTxt}
                   </h2>
+
                   <p className="font-outfit">{box.bodyTxt}</p>
                 </div>
               ))}
@@ -326,22 +356,35 @@ const MainPage: React.FC = () => {
           </div>
         </section>
 
+
+
+        {/* infused range */}
+        <section className="relative">
+          <img src="/assets/img/infused-range.png" alt="Infused Range" className="w-[50%] " />
+
+          <h1 className="font-funkyFont bg-[#a63f16] flex justify-end py-10 px-6 sm:px-16 text-white z-20 text-5xl sm:text-7xl lg:text-9xl">
+            Artisan Edition
+          </h1>
+
+        </section>
+
+
         {/* Bottle page */}
-        <section className="relative mx-auto py-20 overflow-hidden">
-          <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center justify-center px-6 sm:px-10 gap-20 sm:gap-28 lg:gap-44">
+        <section className="relative mx-auto py-32 overflow-hidden">
+
+          <div className="relative z-20 max-w-7xl mx-auto flex flex-col 
+          items-center justify-center px-6 sm:px-10 gap-20 sm:gap-28 lg:gap-20">
             {bottleContent.map((bot, i) => (
               <div
                 key={i}
-                className={`flex items-center justify-center w-full gap-8 sm:gap-14 lg:gap-44 flex-col lg:flex-row ${
-                  i % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`flex items-center justify-center w-full gap-0 sm:gap-8 lg:gap-10 flex-col lg:flex-row ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                  }`}
               >
                 <img
                   src={bot.imgSrc}
                   alt="single-bottle"
-                  className={`w-[55%] sm:w-[35%] lg:w-[20%] drop-shadow-xl transition-transform duration-700 ease-out hover:scale-[1.03] hover:-rotate-1 ${
-                    i % 2 === 0 ? "float-slow" : "float-fast"
-                  }`}
+                  className={`w-[75%] sm:w-[35%] lg:w-[50%] drop-shadow-xl transition-transform duration-700 ease-out hover:scale-[1.03] hover:-rotate-1 ${i % 2 === 0 ? "float-slow" : "float-fast"
+                    }`}
                 />
 
                 <p className="text-center text-base w-full sm:w-[70%] lg:w-[40%]">
@@ -356,36 +399,42 @@ const MainPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-greenBg w-full py-20 -translate-y-20 z-0 absolute inset-x-0" />
+
+
+
+
         </section>
 
-        {/* Last section */}
-        <section className="py-20 px-6 sm:px-10 w-full overflow-hidden">
-          <div className="flex flex-col lg:flex-row items-center lg:items-start">
-            <div className="w-full lg:w-[60%]">
-              <p className="text-center font-outfit text-base px-0 sm:px-8">
-                {pageTextContent[0].highlight && (
-                  <span className="font-semibold font-outfit text-blue-800">
-                    {pageTextContent[0].highlight}
-                  </span>
-                )}{" "}
-                {pageTextContent[0].content}
-                <br />
-                <br />
-                {pageTextContent[1].content}
-              </p>
-            </div>
 
-            <div className="w-full lg:w-[40%] flex justify-center lg:justify-end mt-10 lg:mt-0">
-              <img
-                src="/assets/img/oil.png"
-                alt="oil-bottle"
-                className="w-[60%] sm:w-[45%] lg:w-[60%] -rotate-[20deg] drop-shadow-2xl hover:scale-[1.02] transition-transform duration-700"
-              />
-            </div>
+        <section
+          className="relative w-full  bg-cover bg-opacity- bg-center"
+
+        >
+          <div className="absolute inset-0 bg-[#6b4a2b]/55 z-0" />
+
+          {/* Bottle */}
+          <img
+            src="/assets/img/oil-turned.png"
+            alt="oil-bottle"
+            className="absolute top-6 left-1/2 -translate-y-44 -translate-x-1/2 w-full z-50 drop-shadow-2xl"
+          />
+
+          {/* Text pushed down so it starts under the bottle */}
+          <div className="relative z-10 pt-[320px] px-6 pb-32 text-white max-w-6xl mx-auto">
+            <p>
+              csacscasc
+            </p>
           </div>
         </section>
+
+
+
+
+
+
       </main>
+
+
 
       {/* Footer */}
       <footer className="relative w-full bg-greenBg pt-12 pb-8">

@@ -18,3 +18,8 @@
     font-family: "funkyFont";
     src: url("/assets/fonts/DESYREL.ttf") format("truetype");
 }
+
+@font-face{
+    font-family: "newCursive";
+    src: url("/assets/fonts/Bianca.otf") format('opentype');
+}

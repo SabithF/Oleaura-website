@@ -22,6 +22,7 @@ export default {
         dancing: ["Dancing Script", "cursive"],
         cursiveFont: ["cursiveFont", "cursive"],
         funkyFont: ["funkyFont", "cursive"],
+        newCursive: ["newCursive", "cursive"],
       },
 
     },
