@@ -319,7 +319,7 @@ const MainPage: React.FC = () => {
               />
             </div>
 
-            {/* ✅ Slightly bigger */}
+            {/* Slightly bigger */}
             <p className="py-8 sm:py-16 w-[92%] sm:w-[70%] lg:w-1/2 mx-auto text-[17px] leading-relaxed text-neutral-800">
               {pageTextContent[0].highlight && (
                 <span className="font-semibold font-outfit text-blue-900 text-lg">
@@ -364,7 +364,7 @@ const MainPage: React.FC = () => {
                     className="h-20 group-hover:scale-[1.04] transition-transform duration-500"
                   />
 
-                  {/* ✅ Bigger heading */}
+                  {/* Bigger heading */}
                   <h2 className="uppercase font-outfit font-semibold text-lg pt-8 pb-4">
                     {box.headTxt}
                   </h2>
@@ -390,7 +390,7 @@ const MainPage: React.FC = () => {
 
         {/* Bottle page */}
         <section className="relative mx-auto py-24 overflow-hidden">
-          {/* ✅ Reduced gaps here */}
+          {/* Reduced gaps here */}
           <div
             className="
               relative z-20 max-w-7xl mx-auto
@@ -414,7 +414,7 @@ const MainPage: React.FC = () => {
                   }`}
                 />
 
-                {/* ✅ Bigger + nicer */}
+                {/* Bigger + nicer */}
                 <p className="text-center text-lg leading-relaxed w-full sm:w-[75%] lg:w-[40%] text-neutral-800">
                   {bot.highlighted && (
                     <span className="font-semibold font-outfit text-blue-900 text-xl">
