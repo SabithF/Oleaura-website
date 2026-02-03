@@ -199,7 +199,7 @@ const MainPage: React.FC = () => {
           <div className="flex max-w-7xl pt-10 mx-auto justify-between flex-col lg:flex-row gap-10 lg:gap-0">
             <div className="w-full">
               <h2 className="font-funkyFont text-[#0c2000] text-3xl sm:text-4xl">
-                Welcom to the true taste <br /> of the Mediterranean
+                Welcome to the true taste <br /> of the Mediterranean
               </h2>
 
               {/* ✅ Bigger + nicer reading */}
@@ -381,7 +381,7 @@ const MainPage: React.FC = () => {
 
         {/* infused range */}
         <section className="relative">
-          <img src="/assets/img/infused-range.png" alt="Infused Range" className="w-[50%]" />
+          <img src="/assets/img/infused-range.png" alt="Infused Range" className="w-[50%] relative  z-0" />
 
           <h1 className="font-funkyFont bg-[#a63f16] flex justify-end py-10 px-6 sm:px-16 text-white z-20 text-5xl sm:text-7xl lg:text-9xl">
             Artisan Edition
@@ -402,20 +402,18 @@ const MainPage: React.FC = () => {
             {bottleContent.map((bot, i) => (
               <div
                 key={i}
-                className={`flex items-center justify-center w-full gap-6 sm:gap-8 lg:gap-10 flex-col lg:flex-row ${
-                  i % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`flex items-center justify-center w-full gap-6 sm:gap-8 lg:gap-0 flex-col lg:flex-row ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                  }`}
               >
                 <img
                   src={bot.imgSrc}
                   alt="single-bottle"
-                  className={`w-[75%] sm:w-[35%] lg:w-[50%] drop-shadow-xl transition-transform duration-700 ease-out hover:scale-[1.03] hover:-rotate-1 ${
-                    i % 2 === 0 ? "float-slow" : "float-fast"
-                  }`}
+                  className={`w-[75%] sm:w-[40%] lg:w-[60%] drop-shadow-xl transition-transform duration-700 ease-out hover:scale-[1.03] hover:-rotate-1 ${i % 2 === 0 ? "float-slow" : "float-fast"
+                    }`}
                 />
 
                 {/* Bigger + nicer */}
-                <p className="text-center text-lg leading-relaxed w-full sm:w-[75%] lg:w-[40%] text-neutral-800">
+                <p className="text-center text-lg leading-relaxed w-full sm:w-[75%] lg:w-[40%]  text-neutral-800">
                   {bot.highlighted && (
                     <span className="font-semibold font-outfit text-blue-900 text-xl">
                       {bot.highlighted}
@@ -501,7 +499,7 @@ const MainPage: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 pt-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-white font-outfit">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white font-outfit">
             {/* Company */}
             <div>
               <h3 className="font-semibold uppercase tracking-wide mb-3">Company</h3>
@@ -526,11 +524,7 @@ const MainPage: React.FC = () => {
                     The Range
                   </a>
                 </li>
-                <li>
-                  <a className="hover:text-white transition" href="#quality">
-                    Quality
-                  </a>
-                </li>
+
                 <li>
                   <a className="hover:text-white transition" href="#contact">
                     Contact
@@ -540,7 +534,7 @@ const MainPage: React.FC = () => {
             </div>
 
             {/* Support */}
-            <div>
+            {/* <div>
               <h3 className="font-semibold uppercase tracking-wide mb-3">Support</h3>
               <ul className="space-y-2 text-[13.5px] text-white/85 leading-relaxed">
                 <li>
@@ -564,7 +558,7 @@ const MainPage: React.FC = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Contact */}
             <div>
@@ -581,37 +575,42 @@ const MainPage: React.FC = () => {
                 </li>
               </ul>
 
-              <div className="mt-4 flex gap-3">
-                <a
-                  href="#"
-                  className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition flex items-center justify-center"
-                  aria-label="Instagram"
-                >
-                  <span className="text-sm">IG</span>
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition flex items-center justify-center"
-                  aria-label="Facebook"
-                >
-                  <span className="text-sm">FB</span>
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition flex items-center justify-center"
-                  aria-label="TikTok"
-                >
-                  <span className="text-sm">TT</span>
-                </a>
-              </div>
+
+            </div>
+
+
+
+
+          </div>
+
+
+
+          <div className="mt-10 border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/75 text-[13.5px] leading-relaxed">
+            <p>© {new Date().getFullYear()} Oleaura. All rights reserved.</p>
+
+            {/* Developer credit */}
+            <div className="flex items-center gap-2 text-white/60">
+              <span>Website developed by</span>
+
+              <a
+                href="#"
+                className="flex items-center gap-2 hover:opacity-90 transition"
+              >
+                <img
+                  src="/assets/logo/hai-logo-2.png"
+                  alt="Hai Creations"
+                  className="h-9 sm:h-9 w-auto object-contain"
+                />
+                <span className="text-white hover:underline underline-offset-4">
+                  Hai Creations
+                </span>
+              </a>
             </div>
           </div>
 
-          <div className="mt-10 border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/75 text-[13.5px] leading-relaxed">
-            <p>© {new Date().getFullYear()} Oleaura. All rights reserved.</p>
-            <p className="text-white/60">Crafted with care • Mediterranean quality</p>
-          </div>
+
         </div>
+
       </footer>
 
       {/* Floating Contact */}
