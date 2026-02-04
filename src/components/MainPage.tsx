@@ -533,32 +533,7 @@ const MainPage: React.FC = () => {
               </ul>
             </div>
 
-            {/* Support */}
-            {/* <div>
-              <h3 className="font-semibold uppercase tracking-wide mb-3">Support</h3>
-              <ul className="space-y-2 text-[13.5px] text-white/85 leading-relaxed">
-                <li>
-                  <a className="hover:text-white transition" href="#faq">
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-white transition" href="#shipping">
-                    Shipping & Returns
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-white transition" href="#privacy">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-white transition" href="#terms">
-                    Terms & Conditions
-                  </a>
-                </li>
-              </ul>
-            </div> */}
+           
 
             {/* Contact */}
             <div>
