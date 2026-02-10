@@ -59,13 +59,13 @@ const bottleContent: BottleContentItem[] = [
   {
     imgSrc: "/assets/img/1.png",
     bottleBody:
-      " A harmonious blend of premium extra virgin olive oil and carefully selected natural flavors, crafted to elevate every dish with freshness and finesse. Our oil is combined with naturally derived extracts, allowing the flavors to meld beautifully while preserving their heart-healthy benefits and exceptional taste. Thanks to this meticulous process, the Oleaura Artisan Edition maintains its quality and can be enjoyed by those following a low FODMAP diet.",
+      " A harmonious blend of premium extra virgin olive oil and carefully selected natural flavours, crafted to elevate every dish with freshness and finesse. Our oil is combined with naturally derived extracts, allowing the flavours to meld beautifully while preserving their heart-healthy benefits and exceptional taste. Thanks to this meticulous process, the Oleaura Artisan Edition maintains its quality and can be enjoyed by those following a low FODMAP diet.",
     highlighted: "Oleaura Infused Extra Virgin Olive Oil ",
   },
   {
     imgSrc: "/assets/img/2.png",
     bottleBody:
-      "A savory symphony of flavors. A masterful blend of premium extra virgin olive oil and the bold essence of raw garlic. Carefully crafted, this exquisite flavored olive oil adds depth and richness to any dish, transforming everyday meals into culinary highlights. Perfect for those following a low FODMAP diet or anyone seeking the flavor of garlic without the prep.",
+      "A savory symphony of flavours. A masterful blend of premium extra virgin olive oil and the bold essence of raw garlic. Carefully crafted, this exquisite flavored olive oil adds depth and richness to any dish, transforming everyday meals into culinary highlights. Perfect for those following a low FODMAP diet or anyone seeking the flavor of garlic without the prep.",
     highlighted: "Oleaura Black Garlic Extra Virgin Olive Oil",
   },
   {
