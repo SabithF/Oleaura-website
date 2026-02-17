@@ -282,7 +282,7 @@ const MainPage: React.FC = () => {
             className="w-[90%] sm:w-[70%] lg:w-[60%] z-10 hover:scale-[1.01] transition-transform duration-700 ease-out"
           />
 
-          <div className="max-w-7xl py-10 z-10 px-6 sm:px-16 lg:px-24">
+          <div className="max-w-7xl z-10 px-6 sm:px-16 lg:px-24">
             {/* ✅ Bigger editorial text */}
             <p className="w-full lg:w-[70%] text-lg leading-relaxed font-outfit text-neutral-800">
               <span className="font-semibold text-blue-900 text-lg">
@@ -341,8 +341,10 @@ const MainPage: React.FC = () => {
         </section>
 
         {/* Boxes */}
-        <section className="w-full min-h-screen flex items-center py-16">
+        <section className="w-full  flex items-center ">
+
           <div className="w-full items-center justify-center flex px-6 sm:px-16 lg:px-24">
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {contentInBox.map((box, i) => (
                 <div
@@ -427,62 +429,78 @@ const MainPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Process section with brown overlay */}
-        <section className="relative w-full bg-cover bg-center">
-          {/* overlay */}
-          <div className="absolute inset-0 bg-[#6b4a2b]/55 z-0" />
-
-          {/* Bottle */}
+        <section className="relative w-full">
+          {/* Image */}
           <img
-            src="/assets/img/oil-turned.png"
-            alt="oil-bottle"
-            className="absolute top-6 left-1/2 -translate-y-44 -translate-x-1/2 w-full z-50 drop-shadow-2xl"
+            src="/assets/img/bottle-last.png"
+            alt="olive oil"
+            className=""
           />
 
-          {/* Text */}
-          <div className="relative z-10 pt-[320px] px-6 pb-32 text-white max-w-2xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-semibold font-outfit">
+          {/* Text Overlay */}
+          <div
+            className=" w-full
+      z-10 absolute top-44  left-1/2 -translate-x-1/2
+      sm:top-[800px] sm:-translate-y-1/2
+      px-5 sm:px-6
+      text-left text-white
+      max-w-lg sm:max-w-2xl
+    "
+          >
+            {/* Heading */}
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold font-outfit leading-snug">
               THE OLEAURA OLIVE OIL PROCESS
             </h2>
 
-            <p className="pt-4 text-lg leading-relaxed text-white/95">
+            {/* Intro paragraph */}
+            <p className="pt-3 sm:pt-4 text-[15px] sm:text-base md:text-lg leading-relaxed text-white/95">
               At Oleaura, every drop of our olive oil reflects dedication, tradition,
               and care. Sourced exclusively from select Greek groves, our process ensures
               the purest, most flavorful oil reaches your table.
             </p>
 
-            <ol className="mt-2">
-              <li className="mt-4 text-[17px] leading-relaxed">
-                1.{" "}
-                <span className="font-semibold text-blue-200">Hand-Picked Olives</span>{" "}
+            {/* Steps */}
+            <ol className="mt-1 sm:mt-2 space-y-2 sm:space-y-3">
+
+              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+                <span className="font-semibold text-blue-200">
+                  1. Hand-Picked Olives
+                </span>{" "}
                 Our olives are carefully harvested at peak ripeness to preserve their
                 aroma, flavor, and nutrients.
               </li>
-              <li className="mt-4 text-[17px] leading-relaxed">
-                2.{" "}
+
+              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  Cold Pressed Extraction
+                  2. Cold Pressed Extraction
                 </span>{" "}
                 Using traditional cold-press methods, we extract the oil without heat or
                 chemicals, ensuring maximum freshness and health benefits.
               </li>
-              <li className="mt-4 text-[17px] leading-relaxed">
-                3.{" "}
+
+              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  Filtration & Quality Control
+                  3. Filtration & Quality Control
                 </span>{" "}
                 Each batch is filtered and rigorously tested for purity, acidity, and
                 taste to meet our premium standards.
               </li>
-              <li className="mt-4 text-[17px] leading-relaxed">
-                4.{" "}
-                <span className="font-semibold text-blue-200">Bottled with Care</span>{" "}
+
+              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+                <span className="font-semibold text-blue-200">
+                  4. Bottled with Care
+                </span>{" "}
                 From grove to bottle, Oleaura olive oil is stored in dark glass bottles
                 to maintain its rich flavor, golden color, and natural antioxidants.
               </li>
+
             </ol>
           </div>
         </section>
+
+
+        {/* Process section with brown overlay */}
+
       </main>
 
       {/* Footer */}
@@ -533,7 +551,7 @@ const MainPage: React.FC = () => {
               </ul>
             </div>
 
-           
+
 
             {/* Contact */}
             <div>
