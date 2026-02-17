@@ -429,19 +429,92 @@ const MainPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="relative w-full">
+
+
+        <section className="relative w-full hidden md:block">
           {/* Image */}
           <img
             src="/assets/img/bottle-last.png"
             alt="olive oil"
             className=""
           />
+          
 
           {/* Text Overlay */}
           <div
             className=" w-full
       z-10 absolute top-44  left-1/2 -translate-x-1/2
-      sm:top-[800px] sm:-translate-y-1/2
+      md:top-[650px]  sm:-translate-y-1/2
+      px-5 sm:px-6
+      text-left text-white
+      max-w-lg sm:max-w-2xl
+    "
+          >
+            {/* Heading */}
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold font-outfit leading-snug">
+              THE OLEAURA OLIVE OIL PROCESS
+            </h2>
+
+            {/* Intro paragraph */}
+            <p className="pt-3 sm:pt-4 text-[15px] sm:text-base md:text-lg leading-relaxed text-white/95">
+              At Oleaura, every drop of our olive oil reflects dedication, tradition,
+              and care. Sourced exclusively from select Greek groves, our process ensures
+              the purest, most flavorful oil reaches your table.
+            </p>
+
+            {/* Steps */}
+            <ol className="mt-1 sm:mt-2 space-y-2 sm:space-y-3">
+
+              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+                <span className="font-semibold text-blue-200">
+                  1. Hand-Picked Olives
+                </span>{" "}
+                Our olives are carefully harvested at peak ripeness to preserve their
+                aroma, flavor, and nutrients.
+              </li>
+
+              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+                <span className="font-semibold text-blue-200">
+                  2. Cold Pressed Extraction
+                </span>{" "}
+                Using traditional cold-press methods, we extract the oil without heat or
+                chemicals, ensuring maximum freshness and health benefits.
+              </li>
+
+              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+                <span className="font-semibold text-blue-200">
+                  3. Filtration & Quality Control
+                </span>{" "}
+                Each batch is filtered and rigorously tested for purity, acidity, and
+                taste to meet our premium standards.
+              </li>
+
+              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+                <span className="font-semibold text-blue-200">
+                  4. Bottled with Care
+                </span>{" "}
+                From grove to bottle, Oleaura olive oil is stored in dark glass bottles
+                to maintain its rich flavor, golden color, and natural antioxidants.
+              </li>
+
+            </ol>
+          </div>
+        </section>
+
+        <section className="relative w-full block md:hidden">
+          {/* Image */}
+          <img
+            src="/assets/img/bottle-last-mobile.png"
+            alt="olive oil"
+            className=""
+          />
+          mobile
+
+          {/* Text Overlay */}
+          <div
+            className=" w-full
+      z-10 absolute top-44  left-1/2 -translate-x-1/2
+      sm:top-[400px] sm:-translate-y-1/2
       px-5 sm:px-6
       text-left text-white
       max-w-lg sm:max-w-2xl
