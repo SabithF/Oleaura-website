@@ -57,25 +57,25 @@ const contentInBox: BoxContent[] = [
 
 const bottleContent: BottleContentItem[] = [
   {
-    imgSrc: "/assets/img/1.png",
+    imgSrc: "/assets/img/3.png",
     bottleBody:
       " A harmonious blend of premium extra virgin olive oil and carefully selected natural flavours, crafted to elevate every dish with freshness and finesse. Our oil is combined with naturally derived extracts, allowing the flavours to meld beautifully while preserving their heart-healthy benefits and exceptional taste. Thanks to this meticulous process, the Oleaura Artisan Edition maintains its quality and can be enjoyed by those following a low FODMAP diet.",
     highlighted: "Oleaura Infused Extra Virgin Olive Oil ",
   },
   {
-    imgSrc: "/assets/img/2.png",
+    imgSrc: "/assets/img/4.png",
     bottleBody:
       "A savory symphony of flavours. A masterful blend of premium extra virgin olive oil and the bold essence of raw garlic. Carefully crafted, this exquisite flavored olive oil adds depth and richness to any dish, transforming everyday meals into culinary highlights. Perfect for those following a low FODMAP diet or anyone seeking the flavor of garlic without the prep.",
     highlighted: "Oleaura Black Garlic Extra Virgin Olive Oil",
   },
   {
-    imgSrc: "/assets/img/3.png",
+    imgSrc: "/assets/img/2.png",
     bottleBody:
       "A spicy culinary adventure. A harmonious blend of premium extra virgin olive oil and the vibrant heat of chili peppers. Expertly crafted, this flavorful oil adds a lively kick to your cooking, awakening your taste buds with every drop.",
     highlighted: "Oleaura Chili Extra Virgin Olive Oil",
   },
   {
-    imgSrc: "/assets/img/4.png",
+    imgSrc: "/assets/img/1.png",
     bottleBody:
       "A bright and zesty experience. Premium extra virgin olive oil meets the refreshing essence of sun-ripened lemons in this skillfully crafted oil. Add a vibrant, citrusy dimension to your dishes and infuse every meal with a burst of sunny flavor.",
     highlighted: "Oleaura Lemon Extra Virgin Olive Oil",
@@ -83,8 +83,19 @@ const bottleContent: BottleContentItem[] = [
 ];
 
 // -------------------- FLOATING CONTACT --------------------
+// -------------------- FLOATING CONTACT --------------------
 const FloatingContact: React.FC = () => {
   const [open, setOpen] = React.useState(false);
+  const [submitting, setSubmitting] = React.useState(false);
+
+  // ✅ success/error message (no design change, just shows under the button)
+  const [status, setStatus] = React.useState<{
+    type: "success" | "error" | null;
+    msg: string;
+  }>({ type: null, msg: "" });
+
+  // ✅ Put your Web3Forms access key here
+  const WEB3FORMS_ACCESS_KEY = "50407d8f-7426-4a8f-b602-3769cb3a82d1";
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[999]">
@@ -93,7 +104,10 @@ const FloatingContact: React.FC = () => {
           <div className="bg-greenBg px-4 py-3 flex items-center justify-between">
             <p className="text-white font-outfit font-semibold">Contact Us</p>
             <button
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                setStatus({ type: null, msg: "" });
+              }}
               className="text-white/90 hover:text-white text-xl leading-none"
               aria-label="Close contact form"
               type="button"
@@ -104,10 +118,57 @@ const FloatingContact: React.FC = () => {
 
           <form
             className="bg-white/90 backdrop-blur px-4 py-4"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              alert("Message sent! (Demo)");
-              setOpen(false);
+              if (submitting) return;
+
+              setSubmitting(true);
+              setStatus({ type: null, msg: "" });
+
+              try {
+                const formEl = e.currentTarget;
+
+                const formData = new FormData(formEl);
+                formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+
+                const res = await fetch("https://api.web3forms.com/submit", {
+                  method: "POST",
+                  body: formData,
+                });
+
+                const data = await res.json();
+
+                if (data?.success) {
+                  //  Clear fields
+                  formEl.reset();
+
+                  //  Nice success message
+                  setStatus({
+                    type: "success",
+                    msg: "✅ Thanks! Your message has been sent successfully. We’ll get back to you shortly.",
+                  });
+
+                  
+                  setTimeout(() => {
+                    setOpen(false);
+                    setStatus({ type: null, msg: "" });
+                  }, 1800);
+                } else {
+                  setStatus({
+                    type: "error",
+                    msg:
+                      data?.message ||
+                      "⚠️ Sorry, we couldn’t send your message right now. Please try again.",
+                  });
+                }
+              } catch {
+                setStatus({
+                  type: "error",
+                  msg: "⚠️ Network error. Please check your connection and try again.",
+                });
+              } finally {
+                setSubmitting(false);
+              }
             }}
           >
             <label className="block text-sm font-outfit text-greenTextDark mb-1">
@@ -115,6 +176,7 @@ const FloatingContact: React.FC = () => {
             </label>
             <input
               required
+              name="name"
               className="w-full rounded-lg border border-greenTextDark/20 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-greenBg/40"
               placeholder="Your name"
             />
@@ -125,6 +187,7 @@ const FloatingContact: React.FC = () => {
             <input
               required
               type="email"
+              name="email"
               className="w-full rounded-lg border border-greenTextDark/20 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-greenBg/40"
               placeholder="you@example.com"
             />
@@ -134,6 +197,7 @@ const FloatingContact: React.FC = () => {
             </label>
             <textarea
               required
+              name="message"
               rows={4}
               className="w-full rounded-lg border border-greenTextDark/20 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-greenBg/40"
               placeholder="How can we help?"
@@ -141,10 +205,24 @@ const FloatingContact: React.FC = () => {
 
             <button
               type="submit"
-              className="mt-4 w-full rounded-xl bg-greenBg text-white font-outfit font-semibold py-2 hover:opacity-95 active:opacity-90 transition"
+              disabled={submitting}
+              className="mt-4 w-full rounded-xl bg-greenBg text-white font-outfit font-semibold py-2 hover:opacity-95 active:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send
+              {submitting ? "Sending..." : "Send"}
             </button>
+
+            {/* ✅ Proper success/error message (same layout, minimal) */}
+            {status.type && (
+              <div
+                className={`mt-3 rounded-xl px-3 py-2 text-xs font-outfit leading-relaxed border ${
+                  status.type === "success"
+                    ? "bg-green-50/80 border-green-200 text-green-900"
+                    : "bg-red-50/80 border-red-200 text-red-900"
+                }`}
+              >
+                {status.msg}
+              </div>
+            )}
 
             <p className="mt-2 text-xs text-greenTextDark/70 font-outfit text-center">
               We’ll get back to you soon.
@@ -154,7 +232,10 @@ const FloatingContact: React.FC = () => {
       )}
 
       <button
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          setOpen((v) => !v);
+          setStatus({ type: null, msg: "" });
+        }}
         className="rounded-full bg-greenBg text-white shadow-xl px-4 py-3 sm:px-5 font-outfit font-semibold hover:opacity-95 active:opacity-90 transition contact-fab"
         type="button"
         aria-label="Open contact form"
@@ -164,6 +245,8 @@ const FloatingContact: React.FC = () => {
     </div>
   );
 };
+
+
 
 // -------------------- PAGE --------------------
 const MainPage: React.FC = () => {
@@ -438,13 +521,13 @@ const MainPage: React.FC = () => {
             alt="olive oil"
             className=""
           />
-          
+
 
           {/* Text Overlay */}
           <div
             className=" w-full
-      z-10 absolute top-44  left-1/2 -translate-x-1/2
-      md:top-[650px]  sm:-translate-y-1/2
+      z-10 absolute   left-1/2 -translate-x-1/2
+      md:top-[270px]   sm:top-[360px] lg:top-[450px]    xl:top-[650px]    
       px-5 sm:px-6
       text-left text-white
       max-w-lg sm:max-w-2xl
@@ -508,13 +591,12 @@ const MainPage: React.FC = () => {
             alt="olive oil"
             className=""
           />
-          mobile
 
           {/* Text Overlay */}
           <div
             className=" w-full
-      z-10 absolute top-44  left-1/2 -translate-x-1/2
-      sm:top-[400px] sm:-translate-y-1/2
+      z-10 absolute top-48  left-1/2 -translate-x-1/2
+      
       px-5 sm:px-6
       text-left text-white
       max-w-lg sm:max-w-2xl
