@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 type ContentText = {
   content: string;
@@ -306,7 +307,7 @@ const MainPage: React.FC = () => {
       </header>
 
       <main style={{ backgroundImage: "url(/assets/img/bg-red.png)" }}>
-        <section className="px-6 sm:px-16 lg:px-24 py-8 sm:py-16 lg:py-24 no-repeat center cover">
+        <section id="about" className="px-6 transition-all sm:px-16 lg:px-24 py-8 sm:py-16 lg:py-24 no-repeat center cover">
           <div className="flex max-w-7xl pt-10 mx-auto justify-between flex-col lg:flex-row gap-10 lg:gap-0">
             <div className="w-full">
               <h2 className="font-funkyFont text-[#0c2000] text-3xl sm:text-4xl">
@@ -359,7 +360,8 @@ const MainPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="relative w-full flex flex-col items-center justify-center py-8 sm:py-16 lg:py-24 overflow-hidden">
+        <section className="relative w-full flex flex-col items-center justify-center 
+        py-8 sm:py-16 lg:py-24 overflow-hidden">
           <div className="relative flex items-center justify-center text-center overflow-hidden">
 
             {/* Extra Special (Base Layer) */}
@@ -376,7 +378,7 @@ const MainPage: React.FC = () => {
               Extra Special
             </h1>
 
-           
+
             <p
               className="
       absolute
@@ -414,10 +416,10 @@ const MainPage: React.FC = () => {
             className="w-[90%] sm:w-[70%] lg:w-[60%] z-10 hover:scale-[1.01] transition-transform duration-700 ease-out"
           />
 
-          <div className="max-w-7xl z-10 pt-10 px-6 sm:px-16 lg:px-24">
+          <div className="max-w-7xl z-10 py-10 sm:pt-16 lg:pt-24 px-6 sm:px-16 lg:px-24">
             <p className="w-full lg:w-[70%] text-lg leading-relaxed font-outfit text-neutral-800">
               <span className="font-semibold text-blue-900 text-lg">
-                Extra Virgin Olive Oil{" "}
+                Extra Virgin Olive Oil{" "} <br />
               </span>
               Oleaura Premium Extra Special Extra Virgin Olive Oil is cold-extracted
               from carefully selected olives to deliver a clean, balanced profile with
@@ -426,7 +428,7 @@ const MainPage: React.FC = () => {
               the oil’s unique character.
               <br />
               <br />
-              <span className="font-semibold text-blue-900 text-lg">Virgin Olive Oil </span>
+              <span className="font-semibold text-blue-900 text-lg">Virgin Olive Oil <br /> </span>
               Oleaura Premium Extra Special Virgin Olive Oil offers a softer, rounded
               flavour suited for everyday cooking, with dependable quality and smooth
               performance. Thoughtfully designed packaging complements its subtle taste,
@@ -435,7 +437,7 @@ const MainPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="relative w-full">
+        <section className="relative w-full" id="range">
           <h1 className="font-funkyFont bg-greenBg flex justify-end py-10 px-6 sm:px-16 text-white z-20 text-5xl sm:text-7xl lg:text-9xl">
             Available Formats
           </h1>
@@ -505,11 +507,16 @@ const MainPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="relative">
-          <img
+
+        <section className="relative ">
+          <motion.img
             src="/assets/img/infused-range.png"
             alt="Infused Range"
-            className="w-[50%] relative  z-0"
+            className="w-[50%] relative z-0"
+            initial={{ x: -150, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.4 }}
           />
 
           <h1 className="font-funkyFont bg-[#a63f16] flex justify-end py-10 px-6 sm:px-16 text-white z-20 text-5xl sm:text-7xl lg:text-9xl">
@@ -517,7 +524,7 @@ const MainPage: React.FC = () => {
           </h1>
         </section>
 
-        <section className="relative mx-auto py-24 overflow-hidden">
+        <section className="relative mx-auto py-16 md:py-20 overflow-hidden">
           <div
             className="
               relative z-20 max-w-7xl mx-auto
@@ -526,16 +533,30 @@ const MainPage: React.FC = () => {
               gap-10 sm:gap-12 lg:gap-12
             "
           >
+            <p className="text-center text-lg leading-relaxed w-full sm:w-[90%] lg:w-[90%]  text-neutral-800">
+
+              <span className="font-semibold font-outfit text-blue-900 text-xl">
+                Oleaura Infused Extra Virgin Olive Oil
+                <br />
+              </span>
+              A harmonious blend of premium extra virgin olive oil and carefully selected natural flavors, crafted to elevate every dish with freshness and finesse. Our oil is combined with naturally derived extracts, allowing the flavors to meld beautifully while preserving their heart-healthy benefits and exceptional taste. Thanks to this meticulous process, the Oleaura Artisan Edition maintains its quality and can be enjoyed by those following a low FODMAP diet.
+
+            </p>
+
+
             {bottleContent.map((bot, i) => (
               <div
                 key={i}
-                className={`flex items-center justify-center w-full gap-6 sm:gap-8 lg:gap-0 flex-col lg:flex-row ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                className={`flex items-center justify-center w-full gap-6 sm:gap-8 lg:gap-0 
+                  flex-col lg:flex-row ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""
                   }`}
               >
                 <img
                   src={bot.imgSrc}
                   alt="single-bottle"
-                  className={`w-[75%] sm:w-[40%] lg:w-[60%] drop-shadow-xl transition-transform duration-700 ease-out hover:scale-[1.03] hover:-rotate-1 ${i % 2 === 0 ? "float-slow" : "float-fast"
+                  className={`w-[75%] sm:w-[40%] lg:w-[60%] drop-shadow-xl 
+                    transition-transform duration-700 ease-out hover:scale-[1.03] 
+                    hover:-rotate-1 ${i % 2 === 0 ? "float-slow" : "float-fast"
                     }`}
                 />
 
@@ -563,55 +584,55 @@ const MainPage: React.FC = () => {
           {/* Text Overlay */}
           <div
             className="
-      w-full z-10 absolute left-1/2 -translate-x-1/2
-      md:top-[270px] sm:top-[360px] lg:top-[450px] xl:top-[650px]
-      px-5 sm:px-6
-      text-left text-white
-      max-w-lg sm:max-w-2xl
-    "
+    w-full z-10 absolute left-1/2 -translate-x-1/2
+    md:top-[270px] sm:top-[360px] lg:top-[380px] xl:top-[500px]
+    px-5 sm:px-6
+    text-left text-white
+    max-w-lg sm:max-w-2xl
+  "
           >
             {/* Heading */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold font-outfit leading-snug">
+            <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold font-outfit leading-snug">
               THE OLEAURA OLIVE OIL PROCESS
             </h2>
 
             {/* Intro paragraph */}
-            <p className="pt-3 sm:pt-4 text-[15px] sm:text-base md:text-lg leading-relaxed text-white/95">
+            <p className="text-[15px] sm:text-base md:text-base lg:text-lg leading-relaxed text-white/95">
               At Oleaura, every drop of our olive oil reflects dedication, tradition,
               and care. Sourced exclusively from select Greek groves, our process
               ensures the purest, most flavorful oil reaches your table.
             </p>
 
             {/* Steps */}
-            <ol className="mt-1 sm:mt-2 space-y-2 sm:space-y-3">
-              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+            <ol className=" ">
+              <li className="text-[14px] sm:text-[15px] md:text-[15px] lg:text-[17px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  1. Hand-Picked Olives
-                </span>{" "}
+                  1. Hand-Picked Olives <br />
+                </span>
                 Our olives are carefully harvested at peak ripeness to preserve their
                 aroma, flavor, and nutrients.
               </li>
 
-              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+              <li className="text-[14px] sm:text-[15px] md:text-[15px] lg:text-[17px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  2. Cold Pressed Extraction
-                </span>{" "}
+                  2. Cold Pressed Extraction <br />
+                </span>
                 Using traditional cold-press methods, we extract the oil without heat or
                 chemicals, ensuring maximum freshness and health benefits.
               </li>
 
-              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+              <li className="text-[14px] sm:text-[15px] md:text-[15px] lg:text-[17px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  3. Filtration & Quality Control
-                </span>{" "}
+                  3. Filtration & Quality Control <br />
+                </span>
                 Each batch is filtered and rigorously tested for purity, acidity, and
                 taste to meet our premium standards.
               </li>
 
-              <li className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed">
+              <li className="text-[14px] sm:text-[15px] md:text-[15px] lg:text-[17px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  4. Bottled with Care
-                </span>{" "}
+                  4. Bottled with Care <br />
+                </span>
                 From grove to bottle, Oleaura olive oil is stored in dark glass bottles
                 to maintain its rich flavor, golden color, and natural antioxidants.
               </li>
@@ -629,7 +650,7 @@ const MainPage: React.FC = () => {
           {/* Text Overlay */}
           <div
             className="
-      w-full z-10 absolute top-48 left-1/2 -translate-x-1/2
+      w-full z-10 absolute top-40 left-1/2 -translate-x-1/2
       px-5 sm:px-6
       text-left text-white
       max-w-lg sm:max-w-2xl
@@ -637,7 +658,7 @@ const MainPage: React.FC = () => {
           >
             {/* Heading */}
             <h2 className="text-xl sm:text-2xl font-semibold font-outfit leading-snug">
-              THE OLEAURA OLIVE OIL PROCESS
+              THE OLEAURA OLIVE OIL PROCESS <br />
             </h2>
 
             {/* Intro paragraph */}
@@ -651,7 +672,7 @@ const MainPage: React.FC = () => {
             <ol className="mt-1 sm:mt-2 space-y-2 sm:space-y-3">
               <li className="text-[14px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  1. Hand-Picked Olives
+                  1. Hand-Picked Olives <br />
                 </span>{" "}
                 Our olives are carefully harvested at peak ripeness to preserve their
                 aroma, flavor, and nutrients.
@@ -659,7 +680,7 @@ const MainPage: React.FC = () => {
 
               <li className="text-[14px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  2. Cold Pressed Extraction
+                  2. Cold Pressed Extraction <br />
                 </span>{" "}
                 Using traditional cold-press methods, we extract the oil without heat or
                 chemicals, ensuring maximum freshness and health benefits.
@@ -667,7 +688,7 @@ const MainPage: React.FC = () => {
 
               <li className="text-[14px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  3. Filtration & Quality Control
+                  3. Filtration & Quality Control <br />
                 </span>{" "}
                 Each batch is filtered and rigorously tested for purity, acidity, and
                 taste to meet our premium standards.
@@ -675,7 +696,7 @@ const MainPage: React.FC = () => {
 
               <li className="text-[14px] leading-relaxed">
                 <span className="font-semibold text-blue-200">
-                  4. Bottled with Care
+                  4. Bottled with Care <br />
                 </span>{" "}
                 From grove to bottle, Oleaura olive oil is stored in dark glass bottles
                 to maintain its rich flavor, golden color, and natural antioxidants.
@@ -703,7 +724,9 @@ const MainPage: React.FC = () => {
               <ul className="space-y-2 text-[13.5px] text-white/85 leading-relaxed">
                 <li> <a className="hover:text-white transition" href="#about"> About </a> </li>
                 <li> <a className="hover:text-white transition" href="#range"> The Range </a> </li>
-                <li> <a className="hover:text-white transition" href="#contact"> Contact </a> </li> </ul> </div>
+                {/* <li> <a className="hover:text-white transition" href="#contact"> Contact </a> </li>  */}
+              
+              </ul> </div>
 
             {/* Contact */} <div> <h3 className="font-semibold uppercase tracking-wide mb-3">
               Get in touch</h3> <ul className="space-y-2 text-[13.5px] text-white/85 leading-relaxed">
