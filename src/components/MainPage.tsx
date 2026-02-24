@@ -310,7 +310,7 @@ const MainPage: React.FC = () => {
         <section id="about" className="px-6 transition-all sm:px-16 lg:px-24 py-8 sm:py-16 lg:py-24 no-repeat center cover">
           <div className="flex max-w-7xl pt-10 mx-auto justify-between flex-col lg:flex-row gap-10 lg:gap-0">
             <div className="w-full">
-              <h2 className="font-funkyFont text-[#0c2000] text-3xl sm:text-4xl">
+              <h2 className="font-funkyFont text-[#0c2000] pb-3 md:pb text-3xl sm:text-4xl">
                 Welcome to the true taste <br /> of the Mediterranean
               </h2>
 
@@ -578,7 +578,7 @@ const MainPage: React.FC = () => {
           {/* Image */}
           <img
             src="/assets/img/bottle-last.png"
-            alt="olive oil"
+            alt="olive oil desktop"
           />
 
           {/* Text Overlay */}
@@ -650,7 +650,7 @@ const MainPage: React.FC = () => {
           {/* Text Overlay */}
           <div
             className="
-      w-full z-10 absolute top-52 left-1/2 -translate-x-1/2
+      w-full z-10 absolute top-44 sm:top-32 left-1/2 -translate-x-1/2
       px-5 sm:px-6
       text-left text-white
       max-w-lg sm:max-w-2xl
