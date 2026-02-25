@@ -479,7 +479,7 @@ const MainPage: React.FC = () => {
                   key={i}
                   className="
                     group flex flex-col items-center justify-center
-                    py-12 px-8 text-center w-full
+                    py-5 px-8 text-center w-full
                     bg-white/80 backdrop-blur-sm
                     rounded-sm
                     shadow-lg
