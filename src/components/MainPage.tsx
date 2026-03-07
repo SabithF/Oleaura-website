@@ -47,13 +47,13 @@ const contentInBox: BoxContent[] = [
     imgSrc: "/assets/img/icon-2.png",
     headTxt: "TRACEABILITY",
     bodyTxt:
-      "From orchard to bottle, we maintain full traceability. We know our growers, the unique qualities of their land, and handpick each olive to guarantee purity, consistency, and integrity in every drop.",
+      "From orchard to bottle, we maintain complete traceability. We know each grower, understand the unique qualities of their land, and carefully handpick every olive to ensure purity, consistency, and integrity in every single drop of our premium olive oil.",
   },
   {
     imgSrc: "/assets/img/icon-3.png",
     headTxt: "FRESHNESS & QUALITY",
     bodyTxt:
-      "Oleaura is committed to excellence. Our producers uphold diverse olive varieties, safeguard their natural freshness, and maintain rigorous standards—delivering oil that is both vibrant and refined.",
+      "Oleaura is committed to excellence. Our producers carefully nurture diverse olive varieties, protect their natural freshness, and uphold rigorous standards — delivering olive oil that is vibrant, refined, and faithful to its Mediterranean origin.",
   },
 ];
 
@@ -306,7 +306,8 @@ const MainPage: React.FC = () => {
         </section>
       </header>
 
-      <main style={{ backgroundImage: "url(/assets/img/bg-red.png)" }}>
+      <main style={{ backgroundImage: "url(/assets/img/bg-image.png)" }}>
+      
         <section id="about" className="px-6 transition-all sm:px-16 lg:px-24 py-8 sm:py-16 lg:py-24 no-repeat center cover">
           <div className="flex max-w-7xl pt-10 mx-auto justify-between flex-col lg:flex-row gap-10 lg:gap-0">
             <div className="w-full">
@@ -411,9 +412,9 @@ const MainPage: React.FC = () => {
           />
 
           <img
-            src="/assets/img/two-bottle.png"
+            src="/assets/img/two-bottles.png"
             alt="olive-bottles"
-            className="w-[90%] sm:w-[70%] lg:w-[60%] z-10 hover:scale-[1.01] mt-[2rem] transition-transform duration-700 ease-out"
+            className="w-[90%] sm:w-[70%] lg:w-[100%] z-10 hover:scale-[1.01] mt-[2rem] transition-transform duration-700 ease-out"
           />
 
           <div className="max-w-7xl z-10 py-10 sm:pt-16 lg:pt-24 px-6 sm:px-16 lg:px-24">
@@ -445,7 +446,7 @@ const MainPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <div className="pt-10 px-6 sm:px-0">
               <img
-                src="/assets/img/all-bottle.png"
+                src="/assets/img/all-bottle-n.png"
                 alt="all-bottles"
                 className="hover:scale-[1.01] transition-transform duration-700 max-w-full"
               />
