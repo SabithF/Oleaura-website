@@ -511,7 +511,7 @@ const MainPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="w-full  flex items-center pb-44">
+        <section className="w-full  flex items-center pb-5">
           <div className="w-full items-center justify-center flex px-6 sm:px-16 lg:px-24">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {contentInBox.map((box, i) => (
@@ -552,19 +552,20 @@ const MainPage: React.FC = () => {
           <motion.img
             src="/assets/img/infused-range.png"
             alt="Infused Range"
-            className="w-[50%] relative z-0"
+            className="w-[80%] sm:w-[60%] md:w-[50%] relative z-0"
             initial={{ x: -150, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
           />
+
 
           <h1 className="font-funkyFont bg-[#a63f16] flex justify-end py-10 px-6 sm:px-16 text-white z-20 text-5xl sm:text-7xl lg:text-9xl">
             Artisan Edition
           </h1>
         </section>
 
-        <section className="relative mx-auto py-16 md:py-20 overflow-hidden">
+        <section className="relative mx-auto py-16 md:pt-20 pb-20 sm:pb-36 lg:pb-44 2xl:pb-64 overflow-hidden">
           <div
             className="
               relative z-20 max-w-7xl mx-auto
@@ -587,7 +588,7 @@ const MainPage: React.FC = () => {
             {bottleContent.map((bot, i) => (
               <motion.div
                 key={i}
-                className={`flex items-center justify-center w-full pb-20 gap-6 sm:gap-8 lg:gap-10 flex-col lg:flex-row ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                className={`flex items-center justify-center w-full  xl: gap-6 sm:gap-8 lg:gap-10 flex-col lg:flex-row ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""
                   }`}
                 variants={bottleWrapVariants}
                 initial="hidden"
@@ -606,7 +607,7 @@ const MainPage: React.FC = () => {
                     className={`
                         pointer-events-none select-none
                         absolute z-0 object-contain opacity-90
-                        w-[50%] sm:w-[40%] lg:w-[40%] md:left-20 md:top-28
+                        w-[50%] sm:w-[40%] lg:w-[40%] md:left-20 md:top-5 sm:top-10 sm:left-16 lg:top-32
                         left-5 top-24
                         ${i % 2 === 0 ? "-rotate-6" : "rotate-6"}
                       `}
